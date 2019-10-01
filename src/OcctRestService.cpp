@@ -15,6 +15,7 @@
  return 0;
  }
  */
+#include "include/common.h"
 
 #include <memory>
 #include <cstdlib>
