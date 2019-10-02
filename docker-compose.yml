@@ -1,6 +1,8 @@
 version: '2'
 
 services:
-  man:
-    build: .
-    image: ict:occtrest
+    occtrestservice:
+        build: .
+        image: ict:occtrest
+        ports:
+         - "127.0.0.1:1984:1984"
