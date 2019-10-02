@@ -9,12 +9,12 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
     
 #RUN git clone --recursive https://github.com/corvusoft/restbed.git \
-    && mkdir /restbed/build \
-    && cd /restbed/build \
-    && cmake -DBUILD_TESTS=NO -DBUILD_SHARED=YES -DBUILD_SSL=NO -DCMAKE_CXX_FLAGS="-w" –DCMAKE_CXX_STANDARD=11 .. \
-    && make -j4 install \
-    && cd / \
-    && rm -rf /restbed
+#    && mkdir /restbed/build \
+#    && cd /restbed/build \
+#    && cmake -DBUILD_TESTS=NO -DBUILD_SHARED=YES -DBUILD_SSL=NO -DCMAKE_CXX_FLAGS="-w" –DCMAKE_CXX_STANDARD=11 .. \
+#    && make -j4 install \
+#    && cd / \
+#    && rm -rf /restbed
     
 RUN git clone https://github.com/mmaenz/occtrestservice.git \
     && mkdir /occtrestservice/build \
