@@ -6,15 +6,6 @@
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
-/*
- #include <iostream>
- using namespace std;
-
- int main() {
- cout << "Hello World!" << endl;
- return 0;
- }
- */
 #include "include/common.h"
 
 #include <memory>
@@ -37,6 +28,22 @@ void post_method_handler(const shared_ptr<Session> session) {
 			});
 }
 
+void load_shape(void) {
+	Handle(TDocStd_Document) aDoc;
+	Handle(XCAFApp_Application) anApp = XCAFApp_Application::GetApplication();
+	//anApp->
+	//anApp->NewDocument(aDoc);
+	//TopoDS_CompSolid *compSolid = new TopoDS_CompSolid();
+}
+
+
+
+int main(const int, const char**) {
+	load_shape();
+	return EXIT_SUCCESS;
+}
+
+/*
 int main(const int, const char**) {
 	auto resource = make_shared<Resource>();
 	resource->set_path("/resource");
@@ -52,3 +59,4 @@ int main(const int, const char**) {
 
 	return EXIT_SUCCESS;
 }
+*/
