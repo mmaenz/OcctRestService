@@ -1,0 +1,69 @@
+FROM alpine:3.10
+RUN apk update \
+	&& apk add \
+		build-base \
+        cmake \
+        git \
+        tcl-dev \
+        tk-dev \
+        freetype-dev \
+        mesa-dev \ 
+        libxmu-dev \
+        libxi-dev \
+        libc6-compat \
+        libstdc++ \
+        libgcc \
+    && rm -rf /var/lib/apt/lists/*
+    
+RUN echo "Installing OpenCascade"
+
+RUN cd / \
+    && git clone https://git.dev.opencascade.org/repos/occt.git \
+    && cd /occt \ 
+    && git checkout -b docker V7_3_0 \
+    && mkdir build \ 
+    && cd build \ 
+    && cmake -DBUILD_MODULE_Draw:BOOL=FALSE .. \ 
+    && make -j4 install \
+    && cd / \
+    && rm -rf /occt
+    
+RUN echo "Installing librestbed"
+RUN git clone --recursive https://github.com/corvusoft/restbed.git \
+    && mkdir /restbed/build \
+    && cd /restbed/build \
+    && cmake -DBUILD_SSL=NO -DCMAKE_CXX_FLAGS="-w" –DCMAKE_CXX_STANDARD=11 .. \
+    && make -j4 \
+    && cd / \
+    && cp -r /restbed/distribution/include/* /usr/local/include/ \
+    && cp /restbed/distribution/lib/librestbed.a /usr/local/lib/ \
+    && rm -rf /restbed
+    
+RUN echo "Installing OcctRestService"
+RUN git clone https://github.com/mmaenz/occtrestservice.git \
+    && mkdir /occtrestservice/build \
+    && cd /occtrestservice/build \
+    && cmake .. \
+    && make -j4 install \
+    && cd / \
+    && rm -rf /occtrestservice
+    
+RUN echo "Cleaning up resources"
+RUN apk del \
+		build-base \
+        cmake \
+        git \
+        tcl-dev \
+        tk-dev \
+        freetype-dev \
+        mesa-dev \ 
+        libxmu-dev \
+        libxi-dev \
+        libc6-compat \
+        libstdc++ \
+        libgcc \
+        wget \
+        bash \     
+
+EXPOSE 1984
+ENTRYPOINT ["/usr/bin/OcctRestService", "", ""]
