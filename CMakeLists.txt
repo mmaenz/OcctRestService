@@ -6,7 +6,8 @@ project (OcctRestService)
 add_executable(OcctRestService src/OcctRestService.cpp)
 add_library(librestbed STATIC IMPORTED)
 set_property(TARGET librestbed PROPERTY IMPORTED_LOCATION /usr/local/lib/librestbed.a)
-target_link_libraries(OcctRestService librestbed)
+find_package(Threads REQUIRED)
+target_link_libraries(OcctRestService librestbed Threads::Threads)
 install(TARGETS OcctRestService
         EXPORT OcctRestService
         LIBRARY DESTINATION lib
