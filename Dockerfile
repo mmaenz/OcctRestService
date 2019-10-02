@@ -14,9 +14,6 @@ RUN git clone --recursive https://github.com/corvusoft/restbed.git \
     && cmake -DBUILD_TESTS=NO -DBUILD_SHARED=NO -DBUILD_SSL=NO -DCMAKE_CXX_FLAGS="-w" –DCMAKE_CXX_STANDARD=11 -DCMAKE_INSTALL_PREFIX=/usr/local .. \
     && make -j4 install \
     && cd / \
-#    && find /usr -name "*restbed*" \
-#    && cp /restbed/distribution/lib/librestbed.a /usr/local/lib \
-#    && cp -r /restbed/distribution/include/* /usr/local/include \
     && rm -rf /restbed
     
 RUN git clone https://github.com/mmaenz/occtrestservice.git \
@@ -27,12 +24,10 @@ RUN git clone https://github.com/mmaenz/occtrestservice.git \
     && cd / \
     && rm -rf /occtrestservice
     
-RUN apt-get --auto-remove -y purge \
-		build-essential \
-        cmake \
-        git \        
-        wget \
-        bash \     
+#RUN apt-get --auto-remove -y purge \
+#		build-essential \
+#        cmake \
+#        git \        
 
 EXPOSE 1984
-ENTRYPOINT ["/usr/bin/OcctRestService", "", ""]
+ENTRYPOINT ["/usr/local/bin/OcctRestService", "", ""]
