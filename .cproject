@@ -14,21 +14,38 @@
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.macosx.exe.debug.615501941" name="Debug" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=" parent="cdt.managedbuild.config.gnu.macosx.exe.debug">
 					<folderInfo id="cdt.managedbuild.config.gnu.macosx.exe.debug.615501941." name="/" resourcePath="">
-						<toolChain id="cdt.managedbuild.toolchain.gnu.macosx.exe.debug.288074254" name="MacOSX GCC" nonInternalBuilderId="cdt.managedbuild.target.gnu.builder.macosx.exe.debug" superClass="cdt.managedbuild.toolchain.gnu.macosx.exe.debug">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.macosx.exe.debug.288074254" name="MacOSX GCC" nonInternalBuilderId="cdt.managedbuild.builder.gnu.cross" superClass="cdt.managedbuild.toolchain.gnu.macosx.exe.debug">
 							<targetPlatform id="cdt.managedbuild.target.gnu.platform.macosx.exe.debug.290091313" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.macosx.exe.debug"/>
-							<builder autoBuildTarget="all" buildPath="${workspace_loc:/OcctRestService}/Debug" cleanBuildTarget="clean" enableAutoBuild="true" id="org.eclipse.cdt.build.core.internal.builder.71318785" incrementalBuildTarget="all" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="org.eclipse.cdt.build.core.internal.builder"/>
+							<builder autoBuildTarget="all" buildPath="${workspace_loc:/OcctRestService}/Debug" cleanBuildTarget="clean" enableAutoBuild="true" id="org.eclipse.cdt.build.core.internal.builder.760584205" incrementalBuildTarget="all" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="org.eclipse.cdt.build.core.internal.builder"/>
 							<tool id="cdt.managedbuild.tool.macosx.c.linker.macosx.exe.debug.863888549" name="MacOS X C Linker" superClass="cdt.managedbuild.tool.macosx.c.linker.macosx.exe.debug"/>
 							<tool id="cdt.managedbuild.tool.macosx.cpp.linker.macosx.exe.debug.2036193497" name="MacOS X C++ Linker" superClass="cdt.managedbuild.tool.macosx.cpp.linker.macosx.exe.debug">
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="macosx.cpp.link.option.libs.877606727" name="Libraries (-l)" superClass="macosx.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
+									<listOptionValue builtIn="false" value="TKIGES"/>
+									<listOptionValue builtIn="false" value="TKSTEP"/>
+									<listOptionValue builtIn="false" value="TKSTEP209"/>
+									<listOptionValue builtIn="false" value="TKSTEPAttr"/>
+									<listOptionValue builtIn="false" value="TKSTEPBase"/>
+									<listOptionValue builtIn="false" value="TKSTL"/>
 									<listOptionValue builtIn="false" value="TKernel"/>
 									<listOptionValue builtIn="false" value="TKXCAF"/>
 									<listOptionValue builtIn="false" value="TKService"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKBRep"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKGeomBase"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKGeomAlgo"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKG3d"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKG2d"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKTopAlgo"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKPrim"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKXDESTEP"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKXDEIGES"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKXSBase"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKXMesh"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="macosx.cpp.link.option.userobjs.1937972299" name="Other objects" superClass="macosx.cpp.link.option.userobjs" useByScannerDiscovery="false" valueType="userObjs">
 									<listOptionValue builtIn="false" value="/usr/local/lib/librestbed.a"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="macosx.cpp.link.option.paths.364749159" name="Library search path (-L)" superClass="macosx.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
-									<listOptionValue builtIn="false" value="/usr/local/lib/"/>
+									<listOptionValue builtIn="false" value="/usr/local/lib"/>
 								</option>
 								<option id="macosx.cpp.link.option.shared.2080710869" name="Shared (-dynamiclib)" superClass="macosx.cpp.link.option.shared" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<inputType id="cdt.managedbuild.tool.macosx.cpp.linker.input.2121777824" superClass="cdt.managedbuild.tool.macosx.cpp.linker.input">
@@ -98,11 +115,36 @@
 					<folderInfo id="cdt.managedbuild.config.macosx.exe.release.1167049902." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.macosx.exe.release.1411192171" name="MacOSX GCC" nonInternalBuilderId="cdt.managedbuild.target.gnu.builder.macosx.exe.release" superClass="cdt.managedbuild.toolchain.gnu.macosx.exe.release">
 							<targetPlatform id="cdt.managedbuild.target.gnu.platform.macosx.exe.release.990370870" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.macosx.exe.release"/>
-							<builder autoBuildTarget="all" buildPath="${workspace_loc:/OcctRestService}/Release" cleanBuildTarget="clean" enableAutoBuild="true" id="org.eclipse.cdt.build.core.internal.builder.50556333" incrementalBuildTarget="all" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="org.eclipse.cdt.build.core.internal.builder"/>
+							<builder autoBuildTarget="all" buildPath="${workspace_loc:/OcctRestService}/Release" cleanBuildTarget="clean" enableAutoBuild="true" id="org.eclipse.cdt.build.core.internal.builder.972576723" incrementalBuildTarget="all" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="org.eclipse.cdt.build.core.internal.builder"/>
 							<tool id="cdt.managedbuild.tool.macosx.c.linker.macosx.exe.release.1058641165" name="MacOS X C Linker" superClass="cdt.managedbuild.tool.macosx.c.linker.macosx.exe.release"/>
 							<tool id="cdt.managedbuild.tool.macosx.cpp.linker.macosx.exe.release.17402573" name="MacOS X C++ Linker" superClass="cdt.managedbuild.tool.macosx.cpp.linker.macosx.exe.release">
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="macosx.cpp.link.option.userobjs.910467808" name="Other objects" superClass="macosx.cpp.link.option.userobjs" valueType="userObjs">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="macosx.cpp.link.option.userobjs.910467808" name="Other objects" superClass="macosx.cpp.link.option.userobjs" useByScannerDiscovery="false" valueType="userObjs">
 									<listOptionValue builtIn="false" value="/usr/local/lib/librestbed.a"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="macosx.cpp.link.option.libs.316774551" name="Libraries (-l)" superClass="macosx.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
+									<listOptionValue builtIn="false" value="TKIGES"/>
+									<listOptionValue builtIn="false" value="TKSTEP"/>
+									<listOptionValue builtIn="false" value="TKSTEP209"/>
+									<listOptionValue builtIn="false" value="TKSTEPAttr"/>
+									<listOptionValue builtIn="false" value="TKSTEPBase"/>
+									<listOptionValue builtIn="false" value="TKSTL"/>
+									<listOptionValue builtIn="false" value="TKernel"/>
+									<listOptionValue builtIn="false" value="TKXCAF"/>
+									<listOptionValue builtIn="false" value="TKService"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKBRep"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKGeomBase"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKGeomAlgo"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKG3d"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKG2d"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKTopAlgo"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKPrim"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKXDESTEP"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKXDEIGES"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKXSBase"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKXMesh"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="macosx.cpp.link.option.paths.768905963" name="Library search path (-L)" superClass="macosx.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
+									<listOptionValue builtIn="false" value="/usr/local/lib"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.macosx.cpp.linker.input.361927672" superClass="cdt.managedbuild.tool.macosx.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>

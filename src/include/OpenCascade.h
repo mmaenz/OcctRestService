@@ -8,6 +8,9 @@
 #ifndef INCLUDE_OPENCASCADE_H_
 #define INCLUDE_OPENCASCADE_H_
 
+// Helper
+#include <IFSelect_ReturnStatus.hxx>
+
 // OpenCASCADE Types
 #include <Standard_AbortiveTransaction.hxx>
 #include <Standard_Address.hxx>
@@ -62,7 +65,7 @@
 #include <Standard_Underflow.hxx>
 #include <Standard_UUID.hxx>
 #include <Standard_Version.hxx>
-
+#include <NCollection_Vector.hxx>
 // OpenCascade XCAF (XDE)
 #include <XCAFApp_Application.hxx>
 
@@ -88,5 +91,17 @@
 #include <TopExp.hxx>
 #include <TopExp_Explorer.hxx>
 #include <TopLoc_Location.hxx>
+
+// Reader & Writer
+#include <STEPCAFControl_Reader.hxx>
+#include <STEPCAFControl_Writer.hxx>
+#include <IGESCAFControl_Reader.hxx>
+#include <IGESCAFControl_Writer.hxx>
+#include <STEPControl_Reader.hxx>
+#include <STEPControl_Writer.hxx>
+#include <IGESControl_Reader.hxx>
+#include <IGESControl_Writer.hxx>
+
+// Attributes
 
 #endif /* INCLUDE_OPENCASCADE_H_ */

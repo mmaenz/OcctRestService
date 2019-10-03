@@ -11,12 +11,15 @@ RUN apt-get update \
 RUN git clone --recursive https://github.com/corvusoft/restbed.git \
     && mkdir /restbed/build \
     && cd /restbed/build \
-    && cmake -DBUILD_TESTS=NO -DBUILD_SHARED=NO -DBUILD_SSL=NO -DCMAKE_CXX_FLAGS="-w" –DCMAKE_CXX_STANDARD=11 -DCMAKE_INSTALL_PREFIX=/usr/local .. \
+    && cmake -DBUILD_TESTS=NO -DBUILD_SHARED=YES -DBUILD_SSL=NO -DCMAKE_CXX_FLAGS="-w" –DCMAKE_CXX_STANDARD=11 -DCMAKE_INSTALL_PREFIX=/usr/local .. \
     && make -j4 install \
     && cd / \
     && rm -rf /restbed
     
 RUN git clone https://github.com/mmaenz/occtrestservice.git \
+#    && mkdir /occtrestservice/tkjt/build \
+#    && cd /occtrestservice/tkjt/build \
+#    && cmake -DOCCT_INCLUDE_DIRS=/usr/local/include/opencascade \
     && mkdir /occtrestservice/build \
     && cd /occtrestservice/build \
     && cmake .. \

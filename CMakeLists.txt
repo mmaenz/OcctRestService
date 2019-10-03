@@ -20,6 +20,16 @@ SET(Required_LIBS
   TKG2d
   TKTopAlgo
   TKPrim
+  TKXSBase
+  TKXMesh
+  TKSTEP
+  TKXDESTEP
+  TKSTEP209
+  TKSTEPAttr
+  TKSTEPBase
+  TKSTL
+  TKIGES
+  TKXDEIGES
   librestbed
 )
 

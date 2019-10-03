@@ -33,7 +33,6 @@ void load_shape(void) {
 	Handle(XCAFApp_Application) anApp = XCAFApp_Application::GetApplication();
 	//anApp->
 	//anApp->NewDocument(aDoc);
-	//TopoDS_CompSolid *compSolid = new TopoDS_CompSolid();
 }
 
 
