@@ -5,9 +5,8 @@
  *      Author: mmaenz
  */
 
-#ifndef COMMON_H
-#define COMMON_H
+#ifndef OCCTCONVERT_H
+#define OCCTCONVERT_H
 
-#include "OpenCascade.h"
 
 #endif

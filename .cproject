@@ -21,6 +21,7 @@
 							<tool id="cdt.managedbuild.tool.macosx.cpp.linker.macosx.exe.debug.2036193497" name="MacOS X C++ Linker" superClass="cdt.managedbuild.tool.macosx.cpp.linker.macosx.exe.debug">
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="macosx.cpp.link.option.libs.877606727" name="Libraries (-l)" superClass="macosx.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
 									<listOptionValue builtIn="false" value="TKIGES"/>
+									<listOptionValue builtIn="false" value="TKMesh"/>
 									<listOptionValue builtIn="false" value="TKSTEP"/>
 									<listOptionValue builtIn="false" value="TKSTEP209"/>
 									<listOptionValue builtIn="false" value="TKSTEPAttr"/>
@@ -29,17 +30,17 @@
 									<listOptionValue builtIn="false" value="TKernel"/>
 									<listOptionValue builtIn="false" value="TKXCAF"/>
 									<listOptionValue builtIn="false" value="TKService"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKBRep"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKGeomBase"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKGeomAlgo"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKG3d"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKG2d"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKTopAlgo"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKPrim"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKXDESTEP"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKXDEIGES"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKXSBase"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKXMesh"/>
+									<listOptionValue builtIn="false" value="TKBRep"/>
+									<listOptionValue builtIn="false" value="TKGeomBase"/>
+									<listOptionValue builtIn="false" value="TKGeomAlgo"/>
+									<listOptionValue builtIn="false" value="TKG3d"/>
+									<listOptionValue builtIn="false" value="TKG2d"/>
+									<listOptionValue builtIn="false" value="TKTopAlgo"/>
+									<listOptionValue builtIn="false" value="TKPrim"/>
+									<listOptionValue builtIn="false" value="TKXDESTEP"/>
+									<listOptionValue builtIn="false" value="TKXDEIGES"/>
+									<listOptionValue builtIn="false" value="TKXSBase"/>
+									<listOptionValue builtIn="false" value="TKXMesh"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="macosx.cpp.link.option.userobjs.1937972299" name="Other objects" superClass="macosx.cpp.link.option.userobjs" useByScannerDiscovery="false" valueType="userObjs">
 									<listOptionValue builtIn="false" value="/usr/local/lib/librestbed.a"/>
@@ -47,7 +48,7 @@
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="macosx.cpp.link.option.paths.364749159" name="Library search path (-L)" superClass="macosx.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
 									<listOptionValue builtIn="false" value="/usr/local/lib"/>
 								</option>
-								<option id="macosx.cpp.link.option.shared.2080710869" name="Shared (-dynamiclib)" superClass="macosx.cpp.link.option.shared" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="macosx.cpp.link.option.shared.2080710869" name="Shared (-dynamiclib)" superClass="macosx.cpp.link.option.shared" useByScannerDiscovery="false" value="false" valueType="boolean"/>
 								<inputType id="cdt.managedbuild.tool.macosx.cpp.linker.input.2121777824" superClass="cdt.managedbuild.tool.macosx.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -62,6 +63,7 @@
 								<option defaultValue="gnu.cpp.compiler.debugging.level.max" id="gnu.cpp.compiler.macosx.exe.debug.option.debugging.level.1891793501" name="Debug Level" superClass="gnu.cpp.compiler.macosx.exe.debug.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.dialect.std.1354617986" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.c++11" valueType="enumerated"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="true" id="gnu.cpp.compiler.option.include.files.31291688" name="Include files (-include)" superClass="gnu.cpp.compiler.option.include.files" useByScannerDiscovery="false" valueType="includeFiles"/>
+								<option id="gnu.cpp.compiler.option.debugging.other.547020224" name="Other debugging flags" superClass="gnu.cpp.compiler.option.debugging.other" useByScannerDiscovery="false" value="" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.2021362680" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.macosx.exe.debug.2061208471" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.macosx.exe.debug">
@@ -123,6 +125,7 @@
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="macosx.cpp.link.option.libs.316774551" name="Libraries (-l)" superClass="macosx.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
 									<listOptionValue builtIn="false" value="TKIGES"/>
+									<listOptionValue builtIn="false" value="TKMesh"/>
 									<listOptionValue builtIn="false" value="TKSTEP"/>
 									<listOptionValue builtIn="false" value="TKSTEP209"/>
 									<listOptionValue builtIn="false" value="TKSTEPAttr"/>
@@ -131,17 +134,17 @@
 									<listOptionValue builtIn="false" value="TKernel"/>
 									<listOptionValue builtIn="false" value="TKXCAF"/>
 									<listOptionValue builtIn="false" value="TKService"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKBRep"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKGeomBase"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKGeomAlgo"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKG3d"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKG2d"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKTopAlgo"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKPrim"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKXDESTEP"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKXDEIGES"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKXSBase"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="TKXMesh"/>
+									<listOptionValue builtIn="false" value="TKBRep"/>
+									<listOptionValue builtIn="false" value="TKGeomBase"/>
+									<listOptionValue builtIn="false" value="TKGeomAlgo"/>
+									<listOptionValue builtIn="false" value="TKG3d"/>
+									<listOptionValue builtIn="false" value="TKG2d"/>
+									<listOptionValue builtIn="false" value="TKTopAlgo"/>
+									<listOptionValue builtIn="false" value="TKPrim"/>
+									<listOptionValue builtIn="false" value="TKXDESTEP"/>
+									<listOptionValue builtIn="false" value="TKXDEIGES"/>
+									<listOptionValue builtIn="false" value="TKXSBase"/>
+									<listOptionValue builtIn="false" value="TKXMesh"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="macosx.cpp.link.option.paths.768905963" name="Library search path (-L)" superClass="macosx.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
 									<listOptionValue builtIn="false" value="/usr/local/lib"/>
@@ -159,9 +162,8 @@
 								<option id="gnu.cpp.compiler.macosx.exe.release.option.optimization.level.119141367" name="Optimization Level" superClass="gnu.cpp.compiler.macosx.exe.release.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
 								<option defaultValue="gnu.cpp.compiler.debugging.level.none" id="gnu.cpp.compiler.macosx.exe.release.option.debugging.level.431587278" name="Debug Level" superClass="gnu.cpp.compiler.macosx.exe.release.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.dialect.std.1523880360" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.c++11" valueType="enumerated"/>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.files.829014879" name="Include files (-include)" superClass="gnu.cpp.compiler.option.include.files" useByScannerDiscovery="false" valueType="includeFiles">
-									<listOptionValue builtIn="false" value="/usr/local/include/opencascade"/>
-								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="true" id="gnu.cpp.compiler.option.include.files.829014879" name="Include files (-include)" superClass="gnu.cpp.compiler.option.include.files" useByScannerDiscovery="false" valueType="includeFiles"/>
+								<option id="gnu.cpp.compiler.option.debugging.other.1822312241" name="Other debugging flags" superClass="gnu.cpp.compiler.option.debugging.other" useByScannerDiscovery="false" value="" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.916453222" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.macosx.exe.release.311755173" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.macosx.exe.release">

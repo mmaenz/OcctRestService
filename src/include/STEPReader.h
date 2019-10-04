@@ -8,14 +8,17 @@
 #ifndef INCLUDE_STEPREADER_H_
 #define INCLUDE_STEPREADER_H_
 
-#include "common.h"
+#include "OpenCascade.h"
 #include "CadReader.h"
+#include "aixlog.h"
+
+class AIXLOG;
 
 class STEPReader : CadReader {
 public:
 	STEPReader();
 	~STEPReader() {};
-	void readFile(const std::string);
+	void readFile(const std::string&);
 private:
 	Handle(TDocStd_Document) aDoc;
 	STEPControl_Reader reader;

@@ -15,7 +15,7 @@
 class CadReader {
 public:
 	virtual ~CadReader() {}
-	virtual void readFile(std::string) {};
+	virtual void readFile(const std::string&) {};
 };
 
 #endif /* CADREADER_H_ */

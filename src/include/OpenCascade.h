@@ -66,6 +66,10 @@
 #include <Standard_UUID.hxx>
 #include <Standard_Version.hxx>
 #include <NCollection_Vector.hxx>
+
+// Mesh
+#include <BRepMesh_IncrementalMesh.hxx>
+
 // OpenCascade XCAF (XDE)
 #include <XCAFApp_Application.hxx>
 
@@ -101,7 +105,12 @@
 #include <STEPControl_Writer.hxx>
 #include <IGESControl_Reader.hxx>
 #include <IGESControl_Writer.hxx>
+#include <StlAPI_Reader.hxx>
+#include <StlAPI_Writer.hxx>
 
-// Attributes
+// Error Handling
+#include <Standard_ErrorHandler.hxx>
+#include <Standard_Failure.hxx>
+#include <OSD.hxx>
 
 #endif /* INCLUDE_OPENCASCADE_H_ */

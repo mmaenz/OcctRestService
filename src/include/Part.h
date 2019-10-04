@@ -8,9 +8,7 @@
 #ifndef INCLUDE_PART_H_
 #define INCLUDE_PART_H_
 
-#include "Structure.h"
-
-class Part : Structure {
+class Part {
 public:
 	Part();
 };

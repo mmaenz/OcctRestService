@@ -11,11 +11,9 @@
 #include "Structure.h"
 #include <string>
 
-using namespace std;
-
 class CadWriter {
 public:
-	virtual void writeToFile(Structure, std::string);
+	virtual void writeToFile(Structure&, std::string&);
 };
 
 #endif /* INCLUDE_CADWRITER_H_ */

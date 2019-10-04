@@ -8,11 +8,16 @@
 #ifndef INCLUDE_ASSEMBLY_H_
 #define INCLUDE_ASSEMBLY_H_
 
-#include "Structure.h"
+#include <vector>
+#include "Part.h"
 
-class Assembly : Structure {
+class Assembly {
 public:
 	Assembly();
+	std::vector<Part>& getPartList();
+	void addPart(Part&);
+private:
+	std::vector<Part> partList;
 };
 
 #endif /* INCLUDE_ASSEMBLY_H_ */

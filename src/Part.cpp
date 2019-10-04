@@ -1,13 +1,13 @@
 /*
- * Assembly.cpp
+ * Part.cpp
  *
  *  Created on: 3 Oct 2019
  *      Author: mmaenz
  */
 
-#include "Assembly.h"
+#include "include/Part.h"
 
-Assembly::Assembly() {
+Part::Part() {
 	// TODO Auto-generated constructor stub
 
 }

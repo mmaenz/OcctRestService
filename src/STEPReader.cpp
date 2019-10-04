@@ -5,9 +5,7 @@
  *      Author: mmaenz
  */
 
-#include "STEPReader.h"
-#include "aixlog.h"
-#include <cstddef>
+#include "include/STEPReader.h"
 
 using namespace std;
 
@@ -17,7 +15,7 @@ STEPReader::STEPReader() {
 	Handle(XCAFApp_Application) anApp = XCAFApp_Application::GetApplication();
 }
 
-void STEPReader::readFile(std::string fileName) {
+void STEPReader::readFile(const std::string &fileName) {
 	TCollection_AsciiString occfile(fileName.c_str());
 	if(reader.ReadFile(occfile.ToCString()) != IFSelect_RetDone) {
 		LOG(ERROR) << "Could not read file " + fileName;
