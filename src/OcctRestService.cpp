@@ -40,8 +40,10 @@ int convert(std::string &in, std::string &out) {
 				cout << "Can't load file." << endl;
 				return -1;
 			}
-			Standard_Integer NbRoots = reader.NbRootsForTransfer();
-			Standard_Integer NbTrans = reader.TransferRoots();
+			//Standard_Integer NbRoots = reader.NbRootsForTransfer();
+			reader.NbRootsForTransfer();
+			//Standard_Integer NbTrans = reader.TransferRoots();
+			reader.TransferRoots();
 			TopoDS_Shape Original_Solid = reader.OneShape();
 
 			// Triangulation needed!
