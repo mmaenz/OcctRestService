@@ -5,6 +5,10 @@ RUN apt-get update \
         cmake \
         libocct-data-exchange-7.3 \
         libocct-data-exchange-dev \
+        libocct-foundation-7.3 \
+        libocct-foundation-dev \
+        libocct-ocaf-7.3 \
+        libocct-ocaf-dev \
         git \ 
         libmicrohttpd12 \
         libmicrohttpd-dev \       
