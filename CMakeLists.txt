@@ -8,8 +8,8 @@ include_directories("/usr/local/include/opencascade")
 add_executable(OcctRestService src/OcctRestService.cpp)
 #add_library(librestbed STATIC IMPORTED)
 #set_property(TARGET librestbed PROPERTY IMPORTED_LOCATION /usr/local/lib/librestbed.a)
-add_library(libmicrohttpd STATIC IMPORTED)
-set_property(TARGET libmicrohttpd PROPERTY IMPORTED_LOCATION /usr/local/lib/libmicrohttpd.a)
+#add_library(libmicrohttpd STATIC IMPORTED)
+#set_property(TARGET libmicrohttpd PROPERTY IMPORTED_LOCATION /usr/local/lib/libmicrohttpd.a)
 SET(Required_LIBS 
   TKernel
   TKService
@@ -31,7 +31,7 @@ SET(Required_LIBS
   TKSTL
   TKIGES
   TKXDEIGES
-  libmicrohttpd
+  microhttpd
 )
 
 find_package(Threads REQUIRED)
