@@ -43,16 +43,14 @@ RUN cd / \
 
 RUN echo "Fetching OcctRestService/Drogon"
 
-RUN git clone https://github.com/mmaenz/occtrestservice.git
-
 RUN cd / \
+	&& git clone https://github.com/mmaenz/occtrestservice.git
     && mkdir /occtrestservice/third-party/drogon/build \
     && cd /occtrestservice/third-party/drogon/build \
     && cmake .. \
     && make -j4 \
-    && make prefix=/usr/local install
-
-RUN cd / \
+    && make prefix=/usr/local install \
+	&& cd / \
     && mkdir /occtrestservice/build \
     && cd /occtrestservice/build \
     && cmake .. \
