@@ -21,7 +21,12 @@
 							<tool command="g++" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="cdt.managedbuild.tool.macosx.cpp.linker.macosx.exe.debug.2036193497" name="MacOS X C++ Linker" superClass="cdt.managedbuild.tool.macosx.cpp.linker.macosx.exe.debug">
 								<option id="macosx.cpp.link.option.libs.877606727" name="Libraries (-l)" superClass="macosx.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
 									<listOptionValue builtIn="false" value="TKIGES"/>
-									<listOptionValue builtIn="false" value="cpprest"/>
+									<listOptionValue builtIn="false" value="z"/>
+									<listOptionValue builtIn="false" value="ssl"/>
+									<listOptionValue builtIn="false" value="sqlite3"/>
+									<listOptionValue builtIn="false" value="trantor"/>
+									<listOptionValue builtIn="false" value="jsoncpp"/>
+									<listOptionValue builtIn="false" value="drogon"/>
 									<listOptionValue builtIn="false" value="TKMesh"/>
 									<listOptionValue builtIn="false" value="TKSTEP"/>
 									<listOptionValue builtIn="false" value="TKSTEP209"/>
@@ -127,7 +132,7 @@
 								<option id="macosx.cpp.link.option.userobjs.910467808" name="Other objects" superClass="macosx.cpp.link.option.userobjs" useByScannerDiscovery="false" valueType="userObjs"/>
 								<option id="macosx.cpp.link.option.libs.316774551" name="Libraries (-l)" superClass="macosx.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
 									<listOptionValue builtIn="false" value="TKIGES"/>
-									<listOptionValue builtIn="false" value="cpprestsdk"/>
+									<listOptionValue builtIn="false" value="drogon"/>
 									<listOptionValue builtIn="false" value="TKMesh"/>
 									<listOptionValue builtIn="false" value="TKSTEP"/>
 									<listOptionValue builtIn="false" value="TKSTEP209"/>

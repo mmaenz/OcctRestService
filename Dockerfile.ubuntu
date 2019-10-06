@@ -1,4 +1,4 @@
-FROM drogonframework/drogon
+FROM ubuntu:19.04
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
     && apt-get -y install \
@@ -11,11 +11,6 @@ RUN apt-get update \
         libgl1-mesa-dev \ 
         libxmu-dev \
         libxi-dev \
-        libssl \
-        openssl \
-        libjsoncpp-dev \
-        uuid-dev \
-        zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
 RUN echo "Installing OpenCascade"
@@ -32,23 +27,14 @@ RUN cd / \
     && cd / \
     && rm -rf /occt
 
-#RUN cd / \
-#	&& git clone https://github.com/open-source-parsers/jsoncpp \
-#	&& cd /jsoncpp \
-#	&& mkdir build \
-#	&& cd build \
-#	&& cmake .. \
-#	&& make \
-#	&& make install
-
 RUN echo "Installing OcctRestService"
     
 RUN git clone https://github.com/mmaenz/occtrestservice.git \
-#	&& mkdir /occtrestservice/third-party/drogon/build \
-#	&& cd /occtrestservice/third-party/drogon/build \
-#	&& cmake -DCMAKE_BUILD_TYPE=Release .. \
-#	&& make -j4 \
-#	&& make install \
+	&& mkdir /occtrestservice/third-party/drogon/build \
+	&& cd /occtrestservice/third-party/drogon/build \
+	&& cmake -DCMAKE_BUILD_TYPE=Release .. \
+	&& make -j4 \
+	&& make install \
     && mkdir /occtrestservice/build \
     && cd /occtrestservice/build \
     && cmake .. \

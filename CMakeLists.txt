@@ -31,7 +31,11 @@ SET(Required_LIBS
   TKSTL
   TKIGES
   TKXDEIGES
-  microhttpd
+  drogon
+  trantor
+  sqlite3
+  z
+  ssl
 )
 
 find_package(Threads REQUIRED)

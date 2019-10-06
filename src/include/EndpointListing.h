@@ -10,11 +10,17 @@
 
 #include <map>
 #include <string>
+#include <drogon/HttpSimpleController.h>
 
-class EndpointListing {
+using namespace drogon;
+
+class EndpointListing: public drogon::HttpSimpleController<EndpointListing> {
 public:
 	EndpointListing();
 	virtual ~EndpointListing();
+	virtual void asyncHandleHttpRequest(const HttpRequestPtr& req,
+			std::function<void(const HttpResponsePtr &)> &&callback) override;PATH_LIST_BEGIN
+		PATH_ADD("/", Get);PATH_LIST_END
 	void addEndpoint(std::string path, std::string description);
 	std::string getPath(void) {
 		return "/";
