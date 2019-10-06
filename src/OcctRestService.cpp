@@ -14,6 +14,7 @@
 #include <cstdlib>
 #include <cstdio>
 #include "httpserver/httpserver.hpp"
+#include "httpserver/http_resource.hpp"
 
 #include "include/EndpointListing.h"
 
