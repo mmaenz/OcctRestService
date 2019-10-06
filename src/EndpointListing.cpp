@@ -8,10 +8,6 @@
 #include "include/EndpointListing.h"
 #include <iostream>
 #include <json/json.h>
-#include "rapidjson/document.h"
-#include "rapidjson/stringbuffer.h"
-#include "rapidjson/writer.h"
-#include "rapidjson/prettywriter.h"
 
 EndpointListing::EndpointListing() {
 	addEndpoint(getPath(), getDescription());
