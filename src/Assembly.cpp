@@ -5,7 +5,7 @@
  *      Author: mmaenz
  */
 
-#include "Assembly.h"
+#include "include/Assembly.h"
 
 Assembly::Assembly() {
 	// TODO Auto-generated constructor stub

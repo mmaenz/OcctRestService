@@ -5,7 +5,7 @@
  *      Author: mmaenz
  */
 
-#include "STEPReader.h"
+#include "include/STEPReader.h"
 
 using namespace std;
 

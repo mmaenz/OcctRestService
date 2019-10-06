@@ -80,4 +80,4 @@ RUN cd / \
 #        git \        
 
 EXPOSE 1981
-ENTRYPOINT ["/usr/local/bin/OcctRestService", "", ""]
+ENTRYPOINT ["/bin/sh", "", ""]

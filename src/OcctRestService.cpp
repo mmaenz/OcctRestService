@@ -13,8 +13,8 @@
 #include <cstdio>
 #include <drogon/drogon.h>
 
-#include "OpenCascade.h"
-#include "EndpointListing.h"
+#include "include/OpenCascade.h"
+#include "include/EndpointListing.h"
 
 using namespace drogon;
 

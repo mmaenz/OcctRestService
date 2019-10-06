@@ -5,7 +5,7 @@
  *      Author: mmaenz
  */
 
-#include "Part.h"
+#include "include/Part.h"
 
 Part::Part() {
 	// TODO Auto-generated constructor stub

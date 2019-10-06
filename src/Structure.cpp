@@ -5,7 +5,7 @@
  *      Author: mmaenz
  */
 
-#include "Structure.h"
+#include "include/Structure.h"
 
 Structure::Structure() {
 }
