@@ -6,11 +6,12 @@
  */
 
 #include "include/EndpointListing.h"
+#include "include/Endpoints.h"
 #include <iostream>
 #include <json/json.h>
 
 EndpointListing::EndpointListing() {
-	addEndpoint(getPath(), getDescription());
+	Endpoints::getInstance().addEndpoint(getPath(), getDescription());
 }
 
 EndpointListing::~EndpointListing() {
@@ -21,7 +22,7 @@ void EndpointListing::asyncHandleHttpRequest(const HttpRequestPtr& req,
 		std::function<void(const HttpResponsePtr &)> &&callback) {
 	auto resp = HttpResponse::newHttpResponse();
 	Json::Value root;
-	for (const auto& endpoint : endpoints) {
+	for (const auto& endpoint : Endpoints::getInstance().getEndpoints()) {
 		Json::Value element;
 		element[endpoint.first] = endpoint.second;
 		root.append(element);
@@ -35,9 +36,4 @@ void EndpointListing::asyncHandleHttpRequest(const HttpRequestPtr& req,
 }
 
 std::string EndpointListing::getResponse(void) {
-}
-
-void EndpointListing::addEndpoint(std::string path, std::string description) {
-	std::cout << path << " added" << std::endl;
-	endpoints.insert(make_pair(path, description));
 }

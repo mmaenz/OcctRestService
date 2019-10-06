@@ -21,7 +21,6 @@ public:
 	virtual void asyncHandleHttpRequest(const HttpRequestPtr& req,
 			std::function<void(const HttpResponsePtr &)> &&callback) override;PATH_LIST_BEGIN
 		PATH_ADD("/", Get);PATH_LIST_END
-	void addEndpoint(std::string path, std::string description);
 	std::string getPath(void) {
 		return "/";
 	}
@@ -29,8 +28,6 @@ public:
 		return "Lists all endpoints";
 	}
 	std::string getResponse(void);
-private:
-	std::map<std::string, std::string> endpoints;
 };
 
 #endif /* INCLUDE_ENDPOINTLISTING_H_ */
