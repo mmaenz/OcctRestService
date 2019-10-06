@@ -2,7 +2,7 @@
 // Name        : OcctRestService.cpp
 // Author      : Michael Maenz
 // Version     :
-// Copyright   : 
+// Copyright   :
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 #define OCCT_DEBUG
@@ -13,10 +13,6 @@
 #include <fstream>
 #include <cstdlib>
 #include <cstdio>
-#include "httpserver/httpserver.hpp"
-#include "httpserver/http_resource.hpp"
-
-#include "include/EndpointListing.h"
 
 inline bool fileExists(const std::string name) {
 	std::ifstream f(name.c_str());
@@ -41,7 +37,7 @@ int convert(std::string in, std::string out) {
 			TopoDS_Shape Original_Solid = reader.OneShape();
 
 			// Triangulation needed!
-			BRepMesh_IncrementalMesh Mesh(Original_Solid, 1);
+			//BRepMesh_IncrementalMesh Mesh(Original_Solid, 1);
 
 			// Write to STL
 			StlAPI_Writer stlWriter = StlAPI_Writer();
@@ -56,17 +52,6 @@ int convert(std::string in, std::string out) {
 	return -1;
 }
 
-class hello_world_resource: public httpserver::http_resource {
-public:
-	const std::shared_ptr<httpserver::http_response> render(
-			const httpserver::http_request&) {
-		std::cout << "Geht!" << std::endl;
-		return std::shared_ptr<httpserver::http_response>(
-				new httpserver::string_response("Hello, World!")
-		);
-	}
-};
-
 int main(const int argc, char *argv[]) {
 	if (argc > 1) {
 		OSD::SetSignal();
@@ -76,19 +61,8 @@ int main(const int argc, char *argv[]) {
 		out.erase(std::remove(out.begin(), out.end(), '\''), out.end());
 		convert(in, out);
 	} else {
-		try {
-			httpserver::webserver restServer =
-					httpserver::create_webserver(1984).debug();
-			EndpointListing endpointListing;
-			hello_world_resource hwr;
-			restServer.register_resource("/hello", &hwr);
-			//restServer.register_resource(endpointListing.getPath(), &endpointListing);
-			restServer.start(true);
-		} catch (const std::exception &error) {
-			std::cout << error.what() << std::endl;
-		}
-		return EXIT_SUCCESS;
 	}
+	return EXIT_SUCCESS;
 }
 
 /*

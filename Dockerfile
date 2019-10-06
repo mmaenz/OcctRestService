@@ -3,29 +3,37 @@ RUN apt-get update \
     && apt-get -y install \
 		build-essential \
         cmake \
-        libocct-data-exchange-7.3 \
-        libocct-data-exchange-dev \
-        libocct-foundation-7.3 \
-        libocct-foundation-dev \
-        libocct-ocaf-7.3 \
-        libocct-ocaf-dev \
+        tcl-dev \
+        tk-dev \
+        freetype-dev \
+        mesa-dev \ 
+        libxmu-dev \
+        libxi-dev \
+        libc6-compat \
+        libstdc++ \
+		libgcc \
         git \ 
-        libmicrohttpd12 \
-        libmicrohttpd-dev \       
     && rm -rf /var/lib/apt/lists/*
-    
-#RUN git clone --recursive https://github.com/corvusoft/restbed.git \
-#    && mkdir /restbed/build \
-#    && cd /restbed/build \
-#    && cmake -DBUILD_TESTS=NO -DBUILD_SHARED=YES -DBUILD_SSL=NO -DCMAKE_CXX_FLAGS="-w" –DCMAKE_CXX_STANDARD=11 -DCMAKE_INSTALL_PREFIX=/usr/local .. \
-#    && make -j4 install \
-#    && cd / \
-#    && rm -rf /restbed
+
+RUN echo "Installing OpenCascade"
+
+RUN cd / \
+    && git clone https://git.dev.opencascade.org/repos/occt.git \
+    && cd /occt \ 
+    && git checkout -b docker V7_3_0 \
+    && mkdir build \ 
+    && cd build \ 
+    && cmake -DBUILD_MODULE_Draw:BOOL=FALSE .. \ 
+    && make -j4 install \
+    && cd / \
+    && rm -rf /occt
     
 RUN git clone https://github.com/mmaenz/occtrestservice.git \
-#    && mkdir /occtrestservice/tkjt/build \
-#    && cd /occtrestservice/tkjt/build \
-#    && cmake -DOCCT_INCLUDE_DIRS=/usr/local/include/opencascade \
+	&& mkdir /occtrestservice/third-party/drogon/build \
+	&& cd /occtrestservice/third-party/drogon/build \
+	&& cmake .. \
+	&& make -j4 \
+	&& make install \
     && mkdir /occtrestservice/build \
     && cd /occtrestservice/build \
     && cmake .. \

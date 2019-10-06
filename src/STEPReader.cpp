@@ -11,8 +11,8 @@ using namespace std;
 
 STEPReader::STEPReader() {
 	AixLog::Log::init<AixLog::SinkCout>(AixLog::Severity::trace, AixLog::Type::normal);
-	Handle(TDocStd_Document) aDoc;
-	Handle(XCAFApp_Application) anApp = XCAFApp_Application::GetApplication();
+	//Handle(TDocStd_Document) aDoc;
+	//Handle(XCAFApp_Application) anApp = XCAFApp_Application::GetApplication();
 }
 
 void STEPReader::readFile(const std::string &fileName) {

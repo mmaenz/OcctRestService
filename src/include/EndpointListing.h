@@ -11,16 +11,10 @@
 #include <map>
 #include <string>
 
-#include "../httpserver/httpserver.hpp"
-#include "../rapidjson/document.h"
-#include "../rapidjson/prettywriter.h"
-#include "../rapidjson/stringbuffer.h"
-
-class EndpointListing: public httpserver::http_resource {
+class EndpointListing {
 public:
 	EndpointListing();
 	virtual ~EndpointListing();
-	const std::shared_ptr<httpserver::http_response> render(const httpserver::http_request&);
 	void addEndpoint(std::string path, std::string description);
 	std::string getPath(void) {
 		return "/";
@@ -28,7 +22,7 @@ public:
 	std::string getDescription(void) {
 		return "Lists all endpoints";
 	}
-
+	std::string getResponse(void);
 private:
 	std::map<std::string, std::string> endpoints;
 };

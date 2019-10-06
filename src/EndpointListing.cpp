@@ -8,6 +8,11 @@
 #include "include/EndpointListing.h"
 #include <iostream>
 
+#include "rapidjson/document.h"
+#include "rapidjson/stringbuffer.h"
+#include "rapidjson/writer.h"
+#include "rapidjson/prettywriter.h"
+
 EndpointListing::EndpointListing() {
 	addEndpoint(getPath(), getDescription());
 }
@@ -16,8 +21,7 @@ EndpointListing::~EndpointListing() {
 	// TODO Auto-generated destructor stub
 }
 
-const std::shared_ptr<httpserver::http_response> EndpointListing::render(
-		const httpserver::http_request&) {
+std::string EndpointListing::getResponse(void) {
 	rapidjson::Document document;
 	document.SetObject();
 	rapidjson::Document::AllocatorType &allocator = document.GetAllocator();
@@ -34,9 +38,6 @@ const std::shared_ptr<httpserver::http_response> EndpointListing::render(
 	rapidjson::PrettyWriter<rapidjson::StringBuffer> writer(buffer);
 	document.Accept(writer);
 	std::string endpoints(buffer.GetString());
-
-	return std::shared_ptr<httpserver::http_response>(
-			new httpserver::string_response(buffer.GetString()));
 }
 
 void EndpointListing::addEndpoint(std::string path, std::string description) {
