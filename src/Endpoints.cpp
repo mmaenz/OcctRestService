@@ -6,10 +6,10 @@
  */
 
 #include "include/Endpoints.h"
-#include <fstream>
+#include <iostream>
 
 void Endpoints::addEndpoint(std::string path, std::string description) {
-	std::cout << path << " added" << std::endl;
+	std::cout << "Endpoint " << path << " added" << std::endl;
 	endpoints.insert(make_pair(path, description));
 }
 

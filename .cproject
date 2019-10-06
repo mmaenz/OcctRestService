@@ -68,7 +68,6 @@
 								<option id="gnu.cpp.compiler.option.include.files.31291688" name="Include files (-include)" superClass="gnu.cpp.compiler.option.include.files" useByScannerDiscovery="false"/>
 								<option id="gnu.cpp.compiler.option.debugging.other.547020224" name="Other debugging flags" superClass="gnu.cpp.compiler.option.debugging.other" useByScannerDiscovery="false" value="" valueType="string"/>
 								<option id="gnu.cpp.compiler.option.include.paths.435125002" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="/usr/local/opt/openssl@1.1/include"/>
 									<listOptionValue builtIn="false" value="/opt/local/include"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.other.verbose.1500340158" name="Verbose (-v)" superClass="gnu.cpp.compiler.option.other.verbose" useByScannerDiscovery="false" value="false" valueType="boolean"/>
