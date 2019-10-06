@@ -10,7 +10,6 @@
 
 #include "OpenCascade.h"
 #include "CadReader.h"
-#include "aixlog.h"
 
 class AIXLOG;
 
