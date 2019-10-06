@@ -10,3 +10,6 @@ Way to go:
 5. cd ./occt/build
 6. cmake ..
 7. make -j2 install
+
+Docker does not keep running. Use
+`docker run -p 127.0.0.1:1981:1981 -it --entrypoint /bin/sh ict:occtrest`
