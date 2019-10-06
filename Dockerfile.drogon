@@ -1,4 +1,4 @@
-FROM ubuntu:19.04
+FROM drogonframework/drogon
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
     && apt-get -y install \
@@ -23,6 +23,7 @@ RUN echo "Installing OpenCascade"
 RUN cd / \
     && git clone https://git.dev.opencascade.org/repos/occt.git \
     && cd /occt \ 
+    && git checkout -b docker V7_3_0 \
     && mkdir build \ 
     && cd build \ 
     && cmake -DBUILD_MODULE_Draw:BOOL=FALSE -DCMAKE_CXX_FLAGS="-w" .. \ 

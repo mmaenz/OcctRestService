@@ -14,33 +14,50 @@ RUN apk update \
         libstdc++ \
         libgcc \
     && rm -rf /var/lib/apt/lists/*
-    
+
 RUN echo "Installing OpenCascade"
 
 RUN cd / \
     && git clone https://git.dev.opencascade.org/repos/occt.git \
     && cd /occt \ 
-    && git checkout -b docker V7_3_0 \
+    && git checkout -b docker V7_4_0 \
     && mkdir build \ 
     && cd build \ 
-    && cmake -DBUILD_MODULE_Draw:BOOL=FALSE .. \ 
-    && make -j4 install \
+    && cmake -DBUILD_MODULE_Draw:BOOL=FALSE -DCMAKE_CXX_FLAGS="-w" .. \ 
+    && make -j4 \
+    && make prefix=/usr/local install \
     && cd / \
     && rm -rf /occt
-    
-RUN echo "Installing librestbed"
-RUN git clone --recursive https://github.com/corvusoft/restbed.git \
-    && mkdir /restbed/build \
-    && cd /restbed/build \
-    && cmake -DBUILD_SSL=NO -DCMAKE_CXX_FLAGS="-w" –DCMAKE_CXX_STANDARD=11 .. \
+
+#RUN cd / \
+#	&& git clone https://github.com/open-source-parsers/jsoncpp \
+#	&& mkdir /jsoncpp/build \
+#	&& cd /jsoncpp/build \
+#	&& cmake -DCMAKE_CXX_FLAGS="-w" .. \
+#	&& make \
+#   && make prefix=/usr/local install \
+#	&& cd / \
+#	&& rm -rf /jsoncpp
+
+
+RUN echo "Fetching OcctRestService/Drogon"
+
+RUN cd / \
+	&& git clone https://github.com/mmaenz/occtrestservice.git \
+    && mkdir /occtrestservice/third-party/drogon/build \
+    && cd /occtrestservice/third-party/drogon/build \
+    && cmake .. \
     && make -j4 \
+    && make prefix=/usr/local install \
+	&& cd / \
+	&& git clone https://github.com/open-source-parsers/jsoncpp \
+	&& mkdir /jsoncpp/build \
+	&& cd /jsoncpp/build \
+	&& cmake -DCMAKE_CXX_FLAGS="-w" .. \
+	&& make \
+    && make prefix=/usr/local install \
     && cd / \
-    && cp -r /restbed/distribution/include/* /usr/local/include/ \
-    && cp /restbed/distribution/lib/librestbed.a /usr/local/lib/ \
-    && rm -rf /restbed
-    
-RUN echo "Installing OcctRestService"
-RUN git clone https://github.com/mmaenz/occtrestservice.git \
+    && rm -rf /jsoncpp \
     && mkdir /occtrestservice/build \
     && cd /occtrestservice/build \
     && cmake .. \
@@ -48,22 +65,10 @@ RUN git clone https://github.com/mmaenz/occtrestservice.git \
     && cd / \
     && rm -rf /occtrestservice
     
-RUN echo "Cleaning up resources"
-RUN apk del \
-		build-base \
-        cmake \
-        git \
-        tcl-dev \
-        tk-dev \
-        freetype-dev \
-        mesa-dev \ 
-        libxmu-dev \
-        libxi-dev \
-        libc6-compat \
-        libstdc++ \
-        libgcc \
-        wget \
-        bash \     
+#RUN apt-get --auto-remove -y purge \
+#		build-essential \
+#        cmake \
+#        git \        
 
-EXPOSE 1984
-ENTRYPOINT ["/usr/bin/OcctRestService", "", ""]
+EXPOSE 1981
+ENTRYPOINT ["/usr/local/bin/OcctRestService", "", ""]
