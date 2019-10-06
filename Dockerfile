@@ -16,6 +16,8 @@ RUN apt-get update \
         libjsoncpp-dev \
         uuid-dev \
         zlib1g-dev \
+        libsqlite3-dev \
+        libstdc++-6-dev \
     && rm -rf /var/lib/apt/lists/*
 
 RUN echo "Installing OpenCascade"
@@ -30,18 +32,6 @@ RUN cd / \
     && make prefix=/usr/local install \
     && cd / \
     && rm -rf /occt
-
-#RUN cd / \
-#	&& git clone https://github.com/open-source-parsers/jsoncpp \
-#	&& mkdir /jsoncpp/build \
-#	&& cd /jsoncpp/build \
-#	&& cmake -DCMAKE_CXX_FLAGS="-w" .. \
-#	&& make \
-#   && make prefix=/usr/local install \
-#	&& cd / \
-#	&& rm -rf /jsoncpp
-
-RUN apt-get update && apt-get -y install libsqlite3-dev libstdc++-6-dev
 
 RUN echo "Fetching OcctRestService/Drogon"
 
@@ -64,8 +54,6 @@ RUN cd / \
 	&& rm -rf /occtrestservice
 	
 RUN cd / \
-	&& apt-get -y install llvm \
-	&& find / -name "ld" \
 	&& git clone https://github.com/mmaenz/occtrestservice.git \
     && mkdir /occtrestservice/build \
     && cd /occtrestservice/build \
@@ -74,10 +62,5 @@ RUN cd / \
     && cd / \
     && rm -rf /occtrestservice
     
-#RUN apt-get --auto-remove -y purge \
-#		build-essential \
-#        cmake \
-#        git \        
-
 EXPOSE 1981
-ENTRYPOINT ["/bin/sh", "", ""]
+ENTRYPOINT ["/usr/local/bin/OcctRestService", "", ""]
