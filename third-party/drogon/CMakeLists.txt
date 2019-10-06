@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 
+set(CMAKE_CXX_FLAGS "-w")
+
 project(drogon CXX)
 
 add_library(${PROJECT_NAME} STATIC)

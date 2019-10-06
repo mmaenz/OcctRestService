@@ -26,7 +26,7 @@ RUN cd / \
     && git checkout -b docker V7_3_0 \
     && mkdir build \ 
     && cd build \ 
-    && cmake -DBUILD_MODULE_Draw:BOOL=FALSE .. \ 
+    && cmake -DBUILD_MODULE_Draw:BOOL=FALSE -DCMAKE_CXX_FLAGS="-w" .. \ 
     && make -j4 \
     && make prefix=/usr/local install \
     && cd / \
@@ -43,12 +43,8 @@ RUN cd / \
 
 RUN echo "Installing OcctRestService"
     
-RUN git clone https://github.com/mmaenz/occtrestservice.git \
-#	&& mkdir /occtrestservice/third-party/drogon/build \
-#	&& cd /occtrestservice/third-party/drogon/build \
-#	&& cmake -DCMAKE_BUILD_TYPE=Release .. \
-#	&& make -j4 \
-#	&& make install \
+RUN cd / \
+	&& git clone https://github.com/mmaenz/occtrestservice.git \
     && mkdir /occtrestservice/build \
     && cd /occtrestservice/build \
     && cmake .. \

@@ -7,12 +7,17 @@
 //============================================================================
 #define OCCT_DEBUG
 
-#include "include/OpenCascade.h"
-
 #include <memory>
 #include <fstream>
 #include <cstdlib>
 #include <cstdio>
+#include <drogon/drogon.h>
+
+#include "include/OpenCascade.h"
+
+#include "include/EndpointListing.h"
+
+using namespace drogon;
 
 inline bool fileExists(const std::string name) {
 	std::ifstream f(name.c_str());
@@ -61,6 +66,14 @@ int main(const int argc, char *argv[]) {
 		out.erase(std::remove(out.begin(), out.end(), '\''), out.end());
 		convert(in, out);
 	} else {
+		std::cout << banner << std::endl;
+		// app().addListener("::1", 8848); //ipv6
+		app().addListener("0.0.0.0", 1981);
+
+		app().registerHttpSimpleController("/", "EndpointListing", { Get,
+				"" });
+
+		app().run();
 	}
 	return EXIT_SUCCESS;
 }
