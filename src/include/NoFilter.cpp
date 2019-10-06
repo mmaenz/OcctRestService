@@ -5,7 +5,7 @@
  *      Author: mmaenz
  */
 
-#include "include/NoFilter.h"
+#include "NoFilter.h"
 
 using namespace drogon;
 

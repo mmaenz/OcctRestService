@@ -5,7 +5,7 @@
  *      Author: mmaenz
  */
 
-#include "include/EndpointListing.h"
+#include "EndpointListing.h"
 #include <iostream>
 
 #include "rapidjson/document.h"
