@@ -14,7 +14,6 @@
 #include <drogon/drogon.h>
 
 #include "include/OpenCascade.h"
-
 #include "include/EndpointListing.h"
 
 using namespace drogon;
@@ -67,7 +66,6 @@ int main(const int argc, char *argv[]) {
 		convert(in, out);
 	} else {
 		std::cout << banner << std::endl;
-		// app().addListener("::1", 8848); //ipv6
 		app().addListener("0.0.0.0", 1981);
 
 		app().registerHttpSimpleController("/", "EndpointListing", { Get,

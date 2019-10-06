@@ -41,6 +41,7 @@ RUN cd / \
 #	&& cd / \
 #	&& rm -rf /jsoncpp
 
+RUN apt-get update && apt-get -y install libsqlite3-dev libstdc++-6-dev
 
 RUN echo "Fetching OcctRestService/Drogon"
 
@@ -60,6 +61,7 @@ RUN cd / \
     && make prefix=/usr/local install \
     && cd / \
     && rm -rf /jsoncpp \
+	&& apt-get -y install libsqlite3-dev \
     && mkdir /occtrestservice/build \
     && cd /occtrestservice/build \
     && cmake .. \

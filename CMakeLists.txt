@@ -35,6 +35,7 @@ SET(Required_LIBS
   z
   ssl
   jsoncpp
+  dl
 )
 
 find_package(Threads REQUIRED)
