@@ -61,7 +61,12 @@ RUN cd / \
     && make prefix=/usr/local install \
     && cd / \
     && rm -rf /jsoncpp \
-	&& apt-get -y install libsqlite3-dev \
+	&& rm -rf /occtrestservice
+	
+RUN cd / \
+	&& apt-get -y install libsqlite3-dev uuid-dev \
+	&& find / -name "lib*uuid*" \
+	&& git clone https://github.com/mmaenz/occtrestservice.git \
     && mkdir /occtrestservice/build \
     && cd /occtrestservice/build \
     && cmake .. \

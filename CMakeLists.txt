@@ -6,8 +6,10 @@ project (OcctRestService)
 
 include_directories("/usr/local/include/opencascade")
 add_executable(OcctRestService src/OcctRestService.cpp)
-#add_library(libdrogon STATIC IMPORTED)
-#set_property(TARGET libdrogon PROPERTY IMPORTED_LOCATION /usr/local/lib/libdrogon.a)
+add_library(libuuid STATIC IMPORTED)
+set_property(TARGET libuuid PROPERTY IMPORTED_LOCATION /usr/lib/x86_64-linux-gnu/libuuid.a)
+add_library(libdrogon STATIC IMPORTED)
+set_property(TARGET libdrogon PROPERTY IMPORTED_LOCATION /usr/local/lib/libdrogon.a)
 SET(Required_LIBS 
   TKernel
   TKService
@@ -36,6 +38,7 @@ SET(Required_LIBS
   ssl
   jsoncpp
   dl
+  uuid
 )
 
 find_package(Threads REQUIRED)
