@@ -11,7 +11,7 @@ RUN apt-get update \
         libgl1-mesa-dev \ 
         libxmu-dev \
         libxi-dev \
-        libssl \
+        libssl-dev \
         openssl \
         libjsoncpp-dev \
         uuid-dev \

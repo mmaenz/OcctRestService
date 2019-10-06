@@ -22,7 +22,6 @@
 								<option id="macosx.cpp.link.option.libs.877606727" name="Libraries (-l)" superClass="macosx.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
 									<listOptionValue builtIn="false" value="TKIGES"/>
 									<listOptionValue builtIn="false" value="z"/>
-									<listOptionValue builtIn="false" value="ssl"/>
 									<listOptionValue builtIn="false" value="sqlite3"/>
 									<listOptionValue builtIn="false" value="trantor"/>
 									<listOptionValue builtIn="false" value="jsoncpp"/>

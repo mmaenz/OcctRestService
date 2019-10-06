@@ -1,0 +1,1 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/client.dir/client_example/main.cc.o  -o client ../libdrogon.a ../trantor/libtrantor.a -lpthread -ldl /usr/local/lib/libjsoncpp.a /opt/local/lib/libuuid.dylib /opt/local/lib/libz.dylib /opt/local/lib/libsqlite3.dylib 
