@@ -45,6 +45,11 @@ RUN echo "Installing OcctRestService"
     
 RUN cd / \
 	&& git clone https://github.com/mmaenz/occtrestservice.git \
+    && mkdir /occtrestservice/third-party/drogon/build \
+    && cd /occtrestservice/third-party/drogon/build \
+    && cmake .. \
+    && make -j4 \
+    && make prefix=/usr/local install \
     && mkdir /occtrestservice/build \
     && cd /occtrestservice/build \
     && cmake .. \
