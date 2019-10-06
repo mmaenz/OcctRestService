@@ -5,8 +5,7 @@
  *      Author: mmaenz
  */
 
-#ifndef OCCTCONVERT_H
-#define OCCTCONVERT_H
-
+#ifndef OCCTRESTSERVICE_H
+#define OCCTRESTSERVICE_H
 
 #endif

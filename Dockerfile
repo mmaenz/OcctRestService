@@ -64,8 +64,8 @@ RUN cd / \
 	&& rm -rf /occtrestservice
 	
 RUN cd / \
-	&& apt-get -y install libsqlite3-dev uuid-dev \
-	&& find / -name "lib*uuid*" \
+	&& apt-get -y install llvm \
+	&& find / -name "ld" \
 	&& git clone https://github.com/mmaenz/occtrestservice.git \
     && mkdir /occtrestservice/build \
     && cd /occtrestservice/build \
