@@ -71,7 +71,7 @@ int main(const int argc, char *argv[]) {
 		app().addListener("0.0.0.0", 1981);
 
 		app().registerHttpSimpleController("/", "EndpointListing", { Get,
-				"" });
+				"NoFilter" });
 
 		app().run();
 	}
