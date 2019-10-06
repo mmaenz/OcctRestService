@@ -44,7 +44,7 @@ RUN cd / \
 RUN echo "Fetching OcctRestService/Drogon"
 
 RUN cd / \
-	&& git clone https://github.com/mmaenz/occtrestservice.git
+	&& git clone https://github.com/mmaenz/occtrestservice.git \
     && mkdir /occtrestservice/third-party/drogon/build \
     && cd /occtrestservice/third-party/drogon/build \
     && cmake .. \
