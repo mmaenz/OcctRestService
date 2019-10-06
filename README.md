@@ -3,7 +3,7 @@ OpenCascade functionality as REST
 
 Way to go:
 
-1. Meet requirements: install build-essential clang cmake tcl-dev tk-dev libfreetype6-dev libgl1-mesa-dev libxmu-dev libxi-dev
+1. Meet requirements: install build-essential clang cmake tcl-dev tk-dev libfreetype6-dev libgl1-mesa-dev libxmu-dev libxi-dev, jsoncpp, sqlite3
 2. Download OCCT from OpenCascade (https://git.dev.opencascade.org/gitweb/?p=occt.git;a=summary)
 3. Extract to ./occt
 4. mkdir ./occt/build

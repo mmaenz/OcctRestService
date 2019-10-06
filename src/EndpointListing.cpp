@@ -7,7 +7,7 @@
 
 #include "include/EndpointListing.h"
 #include <iostream>
-
+#include <json/json.h>
 #include "rapidjson/document.h"
 #include "rapidjson/stringbuffer.h"
 #include "rapidjson/writer.h"
@@ -24,23 +24,15 @@ EndpointListing::~EndpointListing() {
 void EndpointListing::asyncHandleHttpRequest(const HttpRequestPtr& req,
 		std::function<void(const HttpResponsePtr &)> &&callback) {
 	auto resp = HttpResponse::newHttpResponse();
-	rapidjson::Document document;
-	document.SetObject();
-	rapidjson::Document::AllocatorType &allocator = document.GetAllocator();
-	rapidjson::Value jsonEndpoints(rapidjson::kObjectType);
+	Json::Value root;
 	for (const auto& endpoint : endpoints) {
-		jsonEndpoints.AddMember(
-				rapidjson::Value(endpoint.first.c_str(), allocator).Move(),
-				rapidjson::Value(endpoint.second.c_str(), allocator).Move(), allocator);
+		Json::Value element;
+		element[endpoint.first] = endpoint.second;
+		root.append(element);
 	}
 
-	document.AddMember("Available endpoint-listing", jsonEndpoints, allocator);
-
-	rapidjson::StringBuffer buffer;
-	rapidjson::PrettyWriter<rapidjson::StringBuffer> writer(buffer);
-	document.Accept(writer);
-	std::string endpoints(buffer.GetString());
-	resp->setBody(buffer.GetString());
+	Json::StyledWriter styledWriter;
+	resp->setBody(styledWriter.write(root));
 	resp->setContentTypeCode(CT_APPLICATION_JSON);
 	resp->setExpiredTime(0);
 	callback(resp);
