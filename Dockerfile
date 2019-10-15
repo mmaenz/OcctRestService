@@ -15,6 +15,7 @@ RUN apt-get update \
         zlib1g-dev \
         libsqlite3-dev \
         libstdc++-6-dev \
+        libtbb-dev \
     && rm -rf /var/lib/apt/lists/*
 
 RUN echo "Installing OpenCascade"
@@ -30,10 +31,23 @@ RUN cd / \
     && cd / \
     && rm -rf /occt
 
+RUN echo "Installing TKJT"
+
+RUN cd / \
+	&& git clone https://github.com/mmaenz/TKJT \
+	&& mkdir /TKJT/build \
+	&& cd /TKJT/build \
+	&& cmake -DCMAKE_CXX_FLAGS="-w" .. \
+	&& make \
+    && make prefix=/usr/local install \
+    && cd / \
+    && rm -rf /TKJT
+
+
 RUN echo "Installing JSONC++"
 
 RUN cd / \
-	&& git clone https://github.com/open-source-parsers/jsoncpp \
+	&& git clone https://github.com/mmaenz/jsoncpp \
 	&& mkdir /jsoncpp/build \
 	&& cd /jsoncpp/build \
 	&& cmake -DCMAKE_CXX_FLAGS="-w" .. \
