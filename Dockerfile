@@ -21,7 +21,6 @@ RUN apt-get update \
 RUN echo "Installing OpenCascade"
 
 RUN cd / \
-#	&& git clone https://git.dev.opencascade.org/repos/occt.git \
 	&& git clone https://github.com/mmaenz/occt \
     && cd /occt \ 
     && mkdir build \ 
