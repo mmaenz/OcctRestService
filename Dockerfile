@@ -30,7 +30,7 @@ RUN cd / \
     && cd / \
     && rm -rf /occt
 
-RUN echo "Fetching JSONC++"
+RUN echo "Installing JSONC++"
 
 RUN cd / \
 	&& git clone https://github.com/open-source-parsers/jsoncpp \
@@ -42,7 +42,7 @@ RUN cd / \
     && cd / \
     && rm -rf /jsoncpp
 
-RUN echo "Fetching Drogon"
+RUN echo "Installing Drogon"
 
 RUN cd / \
 	&& git clone --recursive https://github.com/mmaenz/drogon.git \
@@ -54,7 +54,7 @@ RUN cd / \
 	&& cd / \
 	&& rm -rf /drogon
 
-RUN echo "Fetching OcctRestService"
+RUN echo "Installing OcctRestService"
 
 RUN cd / \
 	&& git clone https://github.com/mmaenz/occtrestservice.git \
