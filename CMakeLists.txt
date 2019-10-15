@@ -36,7 +36,6 @@ SET(Required_LIBS
   trantor
   sqlite3
   z
-  ssl
   jsoncpp
   dl
   uuid

@@ -62,7 +62,7 @@ RUN cd / \
 	&& git clone --recursive https://github.com/mmaenz/drogon.git \
     && mkdir /drogon/build \
     && cd /drogon/build \
-    && cmake -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_FLAGS="-w".. \
+    && cmake -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_FLAGS="-w" .. \
     && make -j4 \
     && make prefix=/usr/local install \
 	&& cd / \
