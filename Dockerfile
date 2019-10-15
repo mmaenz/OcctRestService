@@ -1,5 +1,7 @@
 FROM ubuntu:19.04
 ARG DEBIAN_FRONTEND=noninteractive
+ENV LD_LIBRARY_PATH="/usr/lib:/usr/local/lib"
+
 RUN apt-get update \
     && apt-get -y install \
 		build-essential \
@@ -27,7 +29,7 @@ RUN cd / \
     && cd build \ 
     && cmake -DBUILD_MODULE_Draw:BOOL=FALSE -DCMAKE_CXX_FLAGS="-w" .. \ 
     && make -j4 \
-    && make prefix=/usr install \
+    && make prefix=/usr/local install \
     && cd / \
     && rm -rf /occt
 
@@ -39,7 +41,7 @@ RUN cd / \
 #	&& cd /TKJT/build \
 #	&& cmake -DCMAKE_CXX_FLAGS="-w" .. \
 #	&& make \
-#   && make prefix=/usr install \
+#   && make prefix=/usr/local install \
 #	&& cd / \
 #	&& rm -rf /TKJT
 
@@ -52,7 +54,7 @@ RUN cd / \
 	&& cd /jsoncpp/build \
 	&& cmake -DCMAKE_CXX_FLAGS="-w" .. \
 	&& make \
-    && make prefix=/usr install \
+    && make prefix=/usr/local install \
     && cd / \
     && rm -rf /jsoncpp
 
@@ -64,7 +66,7 @@ RUN cd / \
     && cd /drogon/build \
     && cmake -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_FLAGS="-w" .. \
     && make -j4 \
-    && make prefix=/usr install \
+    && make prefix=/usr/local install \
 	&& cd / \
 	&& rm -rf /drogon
 
@@ -79,6 +81,6 @@ RUN cd / \
     && make prefix=/usr/local install \
     && cd / \
     && rm -rf /occtrestservice
-    
+
 EXPOSE 1981
 ENTRYPOINT ["/usr/local/bin/OcctRestService", "", ""]
