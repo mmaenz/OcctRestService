@@ -27,7 +27,7 @@ RUN cd / \
     && cd build \ 
     && cmake -DBUILD_MODULE_Draw:BOOL=FALSE -DCMAKE_CXX_FLAGS="-w" .. \ 
     && make -j4 \
-    && make prefix=/usr/local install \
+    && make prefix=/usr install \
     && cd / \
     && rm -rf /occt
 
@@ -39,7 +39,7 @@ RUN cd / \
 #	&& cd /TKJT/build \
 #	&& cmake -DCMAKE_CXX_FLAGS="-w" .. \
 #	&& make \
-#   && make prefix=/usr/local install \
+#   && make prefix=/usr install \
 #	&& cd / \
 #	&& rm -rf /TKJT
 
@@ -52,7 +52,7 @@ RUN cd / \
 	&& cd /jsoncpp/build \
 	&& cmake -DCMAKE_CXX_FLAGS="-w" .. \
 	&& make \
-    && make prefix=/usr/local install \
+    && make prefix=/usr install \
     && cd / \
     && rm -rf /jsoncpp
 
@@ -64,7 +64,7 @@ RUN cd / \
     && cd /drogon/build \
     && cmake -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_FLAGS="-w" .. \
     && make -j4 \
-    && make prefix=/usr/local install \
+    && make prefix=/usr install \
 	&& cd / \
 	&& rm -rf /drogon
 
