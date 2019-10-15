@@ -75,8 +75,8 @@ RUN cd / \
     && mkdir /occtrestservice/build \
     && cd /occtrestservice/build \
     && cmake .. \
-    && make -j4 install \
-    && cd / \
+    && make -j4 \
+    && make prefix=/usr/local install \
     && cd / \
     && rm -rf /occtrestservice
     
