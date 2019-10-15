@@ -21,7 +21,8 @@ RUN apt-get update \
 RUN echo "Installing OpenCascade"
 
 RUN cd / \
-    && git clone https://git.dev.opencascade.org/repos/occt.git \
+#	&& git clone https://git.dev.opencascade.org/repos/occt.git \
+	&& git clone https://github.com/mmaenz/occt \
     && cd /occt \ 
     && mkdir build \ 
     && cd build \ 
@@ -31,17 +32,17 @@ RUN cd / \
     && cd / \
     && rm -rf /occt
 
-RUN echo "Installing TKJT"
+#RUN echo "Installing TKJT"
 
-RUN cd / \
-	&& git clone https://github.com/mmaenz/TKJT \
-	&& mkdir /TKJT/build \
-	&& cd /TKJT/build \
-	&& cmake -DCMAKE_CXX_FLAGS="-w" .. \
-	&& make \
-    && make prefix=/usr/local install \
-    && cd / \
-    && rm -rf /TKJT
+#RUN cd / \
+#	&& git clone https://github.com/mmaenz/TKJT \
+#	&& mkdir /TKJT/build \
+#	&& cd /TKJT/build \
+#	&& cmake -DCMAKE_CXX_FLAGS="-w" .. \
+#	&& make \
+#   && make prefix=/usr/local install \
+#	&& cd / \
+#	&& rm -rf /TKJT
 
 
 RUN echo "Installing JSONC++"
