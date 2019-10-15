@@ -11,9 +11,6 @@ RUN apt-get update \
         libgl1-mesa-dev \ 
         libxmu-dev \
         libxi-dev \
-        libssl-dev \
-        openssl \
-        libjsoncpp-dev \
         uuid-dev \
         zlib1g-dev \
         libsqlite3-dev \
@@ -33,16 +30,9 @@ RUN cd / \
     && cd / \
     && rm -rf /occt
 
-RUN echo "Fetching OcctRestService/Drogon"
+RUN echo "Fetching JSONC++"
 
 RUN cd / \
-	&& git clone https://github.com/mmaenz/occtrestservice.git \
-    && mkdir /occtrestservice/third-party/drogon/build \
-    && cd /occtrestservice/third-party/drogon/build \
-    && cmake .. \
-    && make -j4 \
-    && make prefix=/usr/local install \
-	&& cd / \
 	&& git clone https://github.com/open-source-parsers/jsoncpp \
 	&& mkdir /jsoncpp/build \
 	&& cd /jsoncpp/build \
@@ -50,9 +40,22 @@ RUN cd / \
 	&& make \
     && make prefix=/usr/local install \
     && cd / \
-    && rm -rf /jsoncpp \
-	&& rm -rf /occtrestservice
-	
+    && rm -rf /jsoncpp
+
+RUN echo "Fetching Drogon"
+
+RUN cd / \
+	&& git clone --recursive https://github.com/mmaenz/drogon.git \
+    && mkdir /drogon/build \
+    && cd /drogon/build \
+    && cmake -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_FLAGS="-w".. \
+    && make -j4 \
+    && make prefix=/usr/local install \
+	&& cd / \
+	&& rm -rf /drogon
+
+RUN echo "Fetching OcctRestService"
+
 RUN cd / \
 	&& git clone https://github.com/mmaenz/occtrestservice.git \
     && mkdir /occtrestservice/build \
