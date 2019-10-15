@@ -77,6 +77,7 @@ RUN cd / \
     && cmake .. \
     && make -j4 install \
     && cd / \
+    && cd / \
     && rm -rf /occtrestservice
     
 EXPOSE 1981

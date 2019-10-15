@@ -5,6 +5,7 @@ set(APP_TARGET OcctRestService)
 project (OcctRestService)
 
 include_directories("/usr/local/include/opencascade")
+link_directories("/usr/local/lib")
 file(GLOB_RECURSE SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "src/*.cpp")
 add_executable(OcctRestService src/OcctRestService.cpp ${SOURCES})
 add_library(libuuid STATIC IMPORTED)
